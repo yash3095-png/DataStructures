@@ -1,3 +1,8 @@
+/*
+Find the subarray with maximum sum and return the sum in window size k
+*/
+
+
 import java.util.*;
 
 public class SumSW {
@@ -30,3 +35,4 @@ public class SumSW {
         System.out.println(max);
     }
 }
+

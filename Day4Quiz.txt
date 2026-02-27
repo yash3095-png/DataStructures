@@ -1,0 +1,67 @@
+1.Does this compile? class A { protected void show(){} } class B extends A { void show(){} }
+The correct answer is: Yes
+
+2.Does this compile? class A { void test() {} } class B extends A { int test() { return 10; } }
+The correct answer is: No
+
+3.What is the output? class A { A show(){ System.out.println("A"); return this; } } class B extends A { B show(){ System.out.println("B"); return this; } } A obj = new B(); obj.show();
+
+The correct answer is: B
+
+
+4.What is the output? class A { private void show(){ System.out.println("A"); } void test(){ show(); } } class B extends A { void show(){ System.out.println("B"); } } A obj = new B(); obj.test();
+
+The correct answer is: A
+
+5.What is the output? class A { void display(Object o){ System.out.println("Object"); } void display(String s){ System.out.println("String"); } } A obj = new A(); obj.display(null);
+The correct answer is: String
+
+6.What is the output? class A { void show() { System.out.println("A"); } } class B extends A { void show(int x) { System.out.println("B"); } } B obj = new B(); obj.show();
+The correct answer is: A
+
+7.What is the output? class A { void show(){ System.out.println("A"); } } class B extends A { void show(){ System.out.println("B"); } void test(){ super.show(); } } B obj = new B(); obj.test();
+The correct answer is: A
+
+8.What is the output? class A { void show(){ System.out.println("A"); } } class B extends A { void show(){ System.out.println("B"); } } class C extends B { void show(){ System.out.println("C"); } } A obj = new C(); obj.show();
+
+The correct answer is: C
+
+
+9. What is the output? class A { void show(double d){ System.out.println("double"); } void show(int i){ System.out.println("int"); } } A obj = new A(); obj.show(10);
+The correct answer is: int
+
+10.What is the output? class A { void show(int x,double y){ System.out.println("A"); } void show(double x,int y){ System.out.println("B"); } } A obj = new A(); obj.show(10,20);
+The correct answer is: Compile error
+
+11.What is the output? class A { void show(int x){ System.out.println("int"); } void show(long x){ System.out.println("long"); } } A obj = new A(); obj.show(10L);
+The correct answer is: long
+
+12.What is the output? class A { void show(int x){ System.out.println("int"); } void show(Integer x){ System.out.println("Integer"); } } A obj = new A(); obj.show(null);
+The correct answer is: Integer
+
+13.What is the output? class A { void show(Number n){ System.out.println("Number"); } void show(Integer n){ System.out.println("Integer"); } } A obj = new A(); obj.show(10);
+The correct answer is: Integer
+
+14.What is the output? class A { void show(Object o){ System.out.println("Object"); } void show(int... x){ System.out.println("Varargs"); } } A obj = new A(); obj.show(10);
+The correct answer is: Varargs
+
+15.What is the output? class A { void test(){ System.out.println("A"); } } class B extends A { void test(){ System.out.println("B"); } } class C extends B {} A obj = new C(); obj.test();
+
+The correct answer is: B
+
+16.What is the output? class Animal { void sound() { System.out.println("Animal"); } } class Dog extends Animal { void sound() { System.out.println("Dog"); } } Animal obj = new Dog(); obj.sound();
+The correct answer is: Dog
+
+17.What is the output? class Parent { static void display() { System.out.println("Parent"); } } class Child extends Parent { static void display() { System.out.println("Child"); } } Parent obj = new Child(); obj.display();
+
+The correct answer is: Parent
+
+18.What is the output? class Parent { void show(){ System.out.println("Parent"); } } class Child extends Parent { void show(String s){ System.out.println("Child"); } } Parent obj = new Child(); obj.show();
+
+The correct answer is: Parent
+
+19.What is the result? class A { final void show(){} } class B extends A { void show(){} }
+The correct answer is: Compile error
+
+20.What is the result? class A { static void show(){} } class B extends A { void show(){} }
+The correct answer is: Compile error

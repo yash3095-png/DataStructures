@@ -57,18 +57,14 @@ class D2P2{
         String s=sc.nextLine();
         int cnt=0;
         StringBuilder sb=new StringBuilder();
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)=='['&&cnt==0 || s.charAt(i)==']'&&cnt==1){
-                cnt++;
-                continue;
-            }
-            else if(s.charAt(i)=='['&&cnt!=0){
-                sb.append(s.charAt(i));
+        for(char c:s.toCharArray()){
+            if(c=='('){
+                if(cnt>0) sb.append(c);
                 cnt++;
             }
-            else if(s.charAt(i)==']'&&cnt!=0){
-                sb.append(s.charAt(i));
+            else{
                 cnt--;
+                if(cnt>0) sb.append(c);
             }
         }
         System.out.println(sb.toString());
